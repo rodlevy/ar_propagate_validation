@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Welcome</h1>
+ 
+  <p class="create-event">
+  <form id='regular-create' name='create_event' action='/events/create' method='post'>
+     <h1>Create Event:</h1>
+     <div>Organizer Name: <input type='text' name='event[organizer_name]'></div>
+     <div>Organizer Email :  <input type='text' name='event[organizer_email]'></div>
+     <div>Title:    <input type='text' name='event[title]'></div>
+     <div>Date:    <input type='date' name='event[date]'></div>
+     <input type = 'submit' value='Create Event!'>
+     <br>
+
+     <div> <%if @new_event.errors%>
+      <%@new_event.errors.messages.each do |key, value|%>
+        <li><%=key%>:  <%=value%></li>
+      <%end%>
+      <%end%>
+     </div>
+  </form>
+  </p>
+  
+</div>
